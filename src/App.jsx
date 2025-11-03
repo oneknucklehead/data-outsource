@@ -36,11 +36,13 @@ function About() {
 }
 
 export default function App() {
-  const location = useLocation();
+  // const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
+      <Routes
+      //  location={location} key={location.pathname}
+      >
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
