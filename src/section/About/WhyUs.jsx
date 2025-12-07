@@ -7,7 +7,7 @@ const WhyUs = () => {
   return (
     <div>
       <div className="py-10">
-        <SectionTag tagContent="Why Us>" />
+        <SectionTag tagContent="Why Us?" />
         <div className="md:mx-auto text-white max-w-2xl text-start md:text-center py-10">
           <motion.h1
             initial={{ opacity: 0, x: -40 }}

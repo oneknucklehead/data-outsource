@@ -4,7 +4,7 @@ import Platform from "../section/Home/Platform";
 import Testimonials from "../section/Home/Testimonials";
 import Partners from "../section/Home/Partners";
 import WhyUs from "../section/Home/WhyUs";
-import JoinUs from "../section/Home/JoinUs";
+import JoinUs from "../section/JoinUs";
 
 const Home = () => {
   return (

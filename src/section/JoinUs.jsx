@@ -1,7 +1,7 @@
 import React from "react";
-import SectionTag from "../../components/SectionTag";
 import { motion } from "framer-motion";
-import Button from "../../components/Button";
+import SectionTag from "../components/SectionTag";
+import Button from "../components/Button";
 
 const JoinUs = () => {
   return (
