@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <img src={logo} alt="Logo" className="h-10 w-auto" />
+          <img src={logo} alt="Logo" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Links */}
@@ -52,7 +52,7 @@ const Navbar = () => {
                   animate={{ width: "50%", opacity: 1 }}
                   exit={{ width: 0, opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="absolute left-0 bottom-0 h-0.5 bg-white"
+                  className="absolute left-0 bottom-0 h-0.5 bg-[white]"
                 />
               )}
             </AnimatePresence>
@@ -89,7 +89,9 @@ const Navbar = () => {
           })}
 
           {/* CTA Button */}
-          <Button>Dental IT 365</Button>
+          <Button>
+            <a href="tel:+918420317786">Call us</a>
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -110,16 +112,14 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -115 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed top-[60px] left-0 right-0 z-[99] bg-white/95 backdrop-blur-md shadow-xl md:hidden"
+            className={`bg-[#252525] fixed top-[60px] left-0 right-0 z-99  text-white shadow-xl md:hidden`}
           >
             <div className="max-w-7xl mx-auto px-6 pb-4 space-y-4 pt-3">
               <Link
                 to="/"
                 onClick={() => setOpen(false)}
-                className={`block text-gray-800 hover:text-yellow-500 transition-colors ${
-                  location.pathname === "/"
-                    ? "font-semibold text-yellow-500"
-                    : ""
+                className={`block text-white hover:text-theme transition-colors ${
+                  location.pathname === "/" ? "font-semibold text-theme" : ""
                 }`}
               >
                 Home
@@ -133,8 +133,8 @@ const Navbar = () => {
                     key={link}
                     to={path}
                     onClick={() => setOpen(false)}
-                    className={`block text-gray-800 hover:text-yellow-500 transition-colors ${
-                      isActive ? "font-semibold text-yellow-500" : ""
+                    className={`block text-white hover:text-theme transition-colors ${
+                      isActive ? "font-semibold text-theme" : ""
                     }`}
                   >
                     {link}
@@ -142,8 +142,8 @@ const Navbar = () => {
                 );
               })}
 
-              <button className="w-full bg-yellow-500 text-black font-semibold px-5 py-2 rounded-full">
-                Dental IT 365
+              <button className="w-full bg-theme text-black font-semibold px-5 py-2 rounded-full">
+                Call Us
               </button>
             </div>
           </motion.div>

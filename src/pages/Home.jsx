@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="px-6 py-10">
       <HeroBanner />
-      <Platform />
+      {/* <Platform /> */}
       <Testimonials />
       <Partners />
       <WhyUs />
