@@ -1,10 +1,10 @@
 import React from "react";
-import serviceBanner2 from "../../assets/Services/serviceBanner2.png";
-import Button from "../../components/Button";
+import serviceBanner2 from "../assets/Services/serviceBanner2.png";
+import Button from "../components/Button";
 
 const ImageCard = () => {
   return (
-    <div className="text-white">
+    <div className="text-white py-10">
       <div className="w-full relative rounded-3xl overflow-hidden border-theme border-2">
         {/* Background Image */}
         <img

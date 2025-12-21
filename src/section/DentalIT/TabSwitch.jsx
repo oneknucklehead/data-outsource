@@ -13,7 +13,7 @@ const TabSwitch = () => {
   };
 
   return (
-    <div className="text-white">
+    <div className="text-white py-10">
       {/* DESKTOP LAYOUT (Visible on lg and up) */}
       <div className="hidden lg:flex gap-10 items-stretch">
         {/* LEFT CONTENT */}
@@ -119,7 +119,7 @@ const ActiveContent = ({ item, isMobile = false }) => (
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
-    className="px-4"
+    className=""
   >
     {/* Image Wrapper */}
     <div className="relative w-full">

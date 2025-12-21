@@ -44,7 +44,7 @@ const Connect = () => {
   };
 
   return (
-    <div className="text-white py-12 px-4 max-w-7xl mx-auto">
+    <div className="text-white py-10">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* LEFT CONTENT (col-span-4) */}
         <div className="lg:col-span-4 space-y-6">

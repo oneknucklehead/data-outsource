@@ -5,7 +5,8 @@ import bannerSrc from "../assets/About/aboutBanner.png";
 import InfoSection from "../section/Services/InfoSection";
 import FAQAccordion from "../section/Services/FAQAccordion";
 import AllServiceTags from "../section/Services/AllServiceTags";
-import ImageCard from "../section/Services/ImageCard";
+import ImageCard from "../components/ImageCard";
+// import ImageCard from "../section/Services/ImageCard";
 const data = [
   {
     image: bannerSrc,
@@ -55,6 +56,7 @@ const Services = () => {
       <Carousel items={data} />
       <InfoSection />
       <AllServiceTags />
+      {/* <ImageCard /> */}
       <ImageCard />
       <FAQAccordion />
     </div>
