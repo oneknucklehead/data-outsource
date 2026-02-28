@@ -4,31 +4,24 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 import Container from "../components/Container";
-
+import gradBg from "../assets/gradBG.png";
 const Layout = () => {
   return (
-    // <div className="flex flex-col min-h-screen">
     <div className="">
-      {/* Header */}
+      <img
+        src={gradBg}
+        alt=""
+        aria-hidden="true"
+        className="fixed inset-0 w-full h-full object-cover object-center -z-10 pointer-events-none"
+      />
       <Navbar />
-      {/* <AnimatePresence mode="wait"> */}
-      {/* <motion.main
-        key={location.pathname}
-        className="flex-1 pt-20 overflow-hidden"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.3 }}
-      > */}
-      <main>
+
+      <main className="relative">
         <Container>
           <Outlet />
         </Container>
       </main>
-      {/* </motion.main> */}
-      {/* </AnimatePresence> */}
 
-      {/* Footer */}
       <Footer />
     </div>
   );
