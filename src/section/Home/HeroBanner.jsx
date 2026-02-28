@@ -57,12 +57,17 @@ const HeroBanner = () => {
                 initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-3xl md:text-5xl font-bold leading-tight"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight"
               >
-                Enhance your business with{" "}
+                We deliver end-to-end{" "}
                 <span className="text-theme">
+                  IT services, cybersecurity, disaster recovery, and endpoint
+                  management
+                </span>{" "}
+                to keep your business running smoothly and securely.
+                {/* <span className="text-theme">
                   AI First Tech control from Data Outsource
-                </span>
+                </span> */}
               </motion.h1>
 
               <motion.p

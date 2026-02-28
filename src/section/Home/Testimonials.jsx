@@ -13,23 +13,22 @@ const Testimonials = () => {
 
   const LOOP_WIDTH = reviews.length * CARD_FULL;
 
-  const SPEED = 100; // px per second CONSTANT, NEVER DRIFTS
+  const SPEED = 100;
 
   const xRef = useRef(0);
   const lastTime = useRef(0);
   const [x, setX] = useState(0);
   const paused = useRef(false);
 
-  // CONSTANT FRAME LOOP
   useEffect(() => {
     const loop = (time) => {
       if (!paused.current) {
         if (lastTime.current) {
-          const delta = (time - lastTime.current) / 1000; // seconds
+          const delta = (time - lastTime.current) / 1000;
           xRef.current += SPEED * delta;
 
           if (xRef.current >= LOOP_WIDTH) {
-            xRef.current = 0; // perfect reset, no drift
+            xRef.current = 0;
           }
 
           setX(-xRef.current);
@@ -50,6 +49,14 @@ const Testimonials = () => {
     paused.current = false;
   };
 
+  // Passed into ReviewCard so the modal can pause/resume directly
+  const pause = () => {
+    paused.current = true;
+  };
+  const resume = () => {
+    paused.current = false;
+  };
+
   return (
     <div className="py-10">
       <SectionTag tagContent={"Testimonials"} />
@@ -66,7 +73,7 @@ const Testimonials = () => {
         </motion.h1>
         <p className="py-4 text-sm md:text-base">
           Our financial management platform is transforming the way people
-          manage their money. Here’s what some of our users have to say about
+          manage their money. Here's what some of our users have to say about
           their experience
         </p>
       </div>
@@ -84,7 +91,12 @@ const Testimonials = () => {
           style={{ x, width: duplicatedReviews.length * CARD_FULL }}
         >
           {duplicatedReviews.map((r, i) => (
-            <ReviewCard key={i} {...r} />
+            <ReviewCard
+              key={i}
+              {...r}
+              onModalOpen={pause}
+              onModalClose={resume}
+            />
           ))}
         </motion.div>
       </div>

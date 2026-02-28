@@ -63,8 +63,11 @@ const HeroImage = () => {
                 transition={{ duration: 0.5 }}
                 className="text-3xl md:text-5xl font-bold leading-tight"
               >
-                Decades of Managed Service Expertise,
-                <span className="text-theme"> Powered by the Cloud.</span>
+                Your Partner in
+                <span className="text-theme">
+                  {" "}
+                  Managed Services and Cyber Defence.
+                </span>
               </motion.h1>
 
               <motion.p

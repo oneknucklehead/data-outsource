@@ -14,8 +14,9 @@ const Partners = () => {
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-5xl font-bold leading-tight"
         >
-          Our industry
-          <span className="text-theme"> leading partners</span>
+          Partnering with the best
+          <br />
+          <span className="text-theme"> in the industry</span>
         </motion.h1>
         <p className="py-4 text-sm md:text-base">
           We work with industry leaders to deliver the best solutions for our
