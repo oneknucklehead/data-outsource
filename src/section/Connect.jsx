@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 
-const Connect = () => {
-  // 1. FORM STATE & AXIOS LOGIC
-  const [status, setStatus] = useState("idle"); // idle, submitting, success, error
+const Connect = ({ selectedSubject }) => {
+  const [status, setStatus] = useState("idle");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -12,6 +11,13 @@ const Connect = () => {
     subject: "Email Issues",
     message: "",
   });
+
+  // Sync dropdown whenever a card is clicked
+  useEffect(() => {
+    if (selectedSubject) {
+      setFormData((prev) => ({ ...prev, subject: selectedSubject }));
+    }
+  }, [selectedSubject]);
 
   const FORM_ENDPOINT = "https://formsubmit.co/ajax/zohebahmed1542@gmail.com";
 
@@ -44,9 +50,9 @@ const Connect = () => {
   };
 
   return (
-    <div className="text-white py-10">
+    <div id="connect-form" className="text-white py-10">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        {/* LEFT CONTENT (col-span-4) */}
+        {/* LEFT CONTENT */}
         <div className="lg:col-span-4 space-y-6">
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
@@ -64,12 +70,12 @@ const Connect = () => {
             transition={{ duration: 0.6 }}
             className="text-white text-sm md:text-base max-w-lg"
           >
-            Don’t worry, we’re here to support you. Tell us about you issue. We
+            Don't worry, we're here to support you. Tell us about your issue. We
             endeavour to respond as soon as possible.
           </motion.p>
         </div>
 
-        {/* RIGHT FORM (col-span-8) */}
+        {/* RIGHT FORM */}
         <div className="lg:col-span-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* NAME ROW */}
@@ -126,11 +132,11 @@ const Connect = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full bg-[#1A1717]  border border-theme rounded-lg p-3 outline-none appearance-none cursor-pointer text-white/70"
+                    className="w-full bg-[#1A1717] border border-theme rounded-lg p-3 outline-none appearance-none cursor-pointer text-white/70"
                   >
                     <option value="Email Issues">Email Issues</option>
-                    <option value="IT Support">IT Support</option>
-                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="IT Support">Cloud Server Issues</option>
+                    <option value="General Inquiry">Desktop Support</option>
                   </select>
                   <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
                     <svg
@@ -144,7 +150,7 @@ const Connect = () => {
                         strokeLinejoin="round"
                         strokeWidth="2"
                         d="M19 9l-7 7-7-7"
-                      ></path>
+                      />
                     </svg>
                   </div>
                 </div>
@@ -163,10 +169,10 @@ const Connect = () => {
                 value={formData.message}
                 onChange={handleChange}
                 className="bg-[#1A1717] border border-theme rounded-lg p-3 outline-none focus:ring-1 focus:ring-theme transition-all resize-none placeholder:text-white/30"
-              ></textarea>
+              />
             </div>
 
-            {/* SUBMIT BUTTON & FEEDBACK */}
+            {/* SUBMIT */}
             <div className="flex flex-col items-end gap-4">
               <button
                 disabled={status === "submitting"}

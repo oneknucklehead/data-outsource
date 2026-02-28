@@ -28,7 +28,9 @@ const ImageCard = () => {
           </p>
 
           <div className="mt-2">
-            <Button>Request a consultation</Button>
+            <Button>
+              <div className="">Request a free 30 min consultation</div>
+            </Button>
           </div>
         </div>
       </div>
