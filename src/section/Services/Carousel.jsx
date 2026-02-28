@@ -4,7 +4,7 @@ import "flickity/css/flickity.css";
 import ServiceCard from "../../components/Services/ServiceCard";
 import SectionTag from "../../components/SectionTag";
 import { motion } from "framer-motion";
-
+const TRUNCATE_LENGTH = 120;
 export default function Carousel({ items }) {
   const carouselRef = useRef(null);
   const flickityInstance = useRef(null);
@@ -147,7 +147,13 @@ export default function Carousel({ items }) {
               <ServiceCard
                 imgsrc={item.image}
                 title={item.title}
-                description={item.description}
+                fullDescription={item.description}
+                description={
+                  item.description?.length > TRUNCATE_LENGTH
+                    ? item.description.slice(0, TRUNCATE_LENGTH).trimEnd() +
+                      "..."
+                    : item.description
+                }
               />
             </div>
           ))}

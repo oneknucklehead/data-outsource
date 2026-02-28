@@ -56,32 +56,41 @@ export const ServiceBanner = () => {
                 initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-white text-sm md:text-base max-w-lg"
+                className="text-white text-sm md:text-base"
               >
-                At Data Outsource, we protect every organization’s data,
-                systems, and productivity from loss, theft, and downtime —
-                whether caused by cyberattacks, hardware failure, natural
-                disasters, or human error.
+                Data Outsource partners with success and perfection so we know
+                we deliver the best organisation everytime. At Data Outsource,
+                we believe that the data, applications, systems and productivity
+                of every organization should be protected against loss, theft,
+                and downtime – whether it’s caused by cyberattacks, hardware
+                failure, natural disaster, or human error.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
-                className="text-white text-sm md:text-base max-w-lg"
+                className="text-white text-sm md:text-base"
               >
-                Our cyber solutions are fully white-labeled for Reseller MSPs,
-                offering end-user support so our partners can focus on growth
-                while we manage their cyber footprint.
+                Our Cyber based products and services are easily white labelled
+                for our growing Reseller MSP market within a very mature
+                Reseller Channel, we also offer end-user support to our
+                Resellers enabling them to focus on sales and growth whilst we
+                take care of their Cyber footprint.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7 }}
-                className="text-white text-sm md:text-base max-w-lg"
+                className="text-white text-sm md:text-base"
               >
-                Partnered with top IT vendors and holding the highest
-                accreditations, Data Outsource ensures best-in-class products,
-                services, and unwavering support.
+                Data Outsource has partnered with the IT industry's best vendors
+                and providers, our IT partners have proved themselves in their
+                market and will not let us down by providing the best-of-breed
+                services or solutions. This way data Outsource knows we have the
+                best product and support from our partners. Data Outsource has
+                the highest partner accreditation possible so we have a firm
+                understanding of the product or service that complements our
+                services.
               </motion.p>
 
               {/* <motion.button
