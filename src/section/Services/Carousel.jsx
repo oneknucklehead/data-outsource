@@ -142,7 +142,7 @@ export default function Carousel({ items }) {
           {items.map((item, index) => (
             <div
               key={index}
-              className="carousel-cell w-full md:w-1/2 lg:w-1/3 mr-6"
+              className="carousel-cell w-full md:w-1/2 lg:w-1/3 mr-6 max-h-max"
             >
               <ServiceCard
                 imgsrc={item.image}

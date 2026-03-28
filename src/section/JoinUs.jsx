@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import SectionTag from "../components/SectionTag";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 const JoinUs = () => {
   return (
@@ -24,9 +25,11 @@ const JoinUs = () => {
         </p>
       </div>
       <div className="flex items-center justify-start md:justify-center">
-        <Button>
-          <p>Book A Free Demo</p>
-        </Button>
+        <Link to={"/contact"}>
+          <Button>
+            <p>Book A Free Demo</p>
+          </Button>
+        </Link>
       </div>
     </div>
   );

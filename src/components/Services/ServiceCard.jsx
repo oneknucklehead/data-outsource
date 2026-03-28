@@ -198,40 +198,65 @@ const ServiceCard = ({ imgsrc, title, description, to, fullDescription }) => {
     setIsModalOpen(false);
   }, []);
 
-  return (
-    <>
-      <div className="relative my-12 h-full bg-[#1A1717] text-white rounded-2xl border-2 border-theme">
-        <img
-          src={imgsrc}
-          alt="service card image"
-          className="w-full max-h-28 rounded-t-2xl object-cover"
-        />
-        <span className="bg-theme p-2 w-fit h-fit absolute -top-7 left-7 rounded-full">
-          <ServiceIcon />
-        </span>
-        <div className="p-4 md:p-6 space-y-3">
-          <h3 className="text-theme text-2xl md:text-3xl font-semibold">
-            {title}
-          </h3>
-          <p className="text-sm md:text-base">{description}</p>
-          <button
-            onClick={openModal}
-            className="bg-theme text-[#1A1717] text-xs md:text-sm px-4 py-2 font-semibold rounded-full hover:brightness-110 active:scale-95 transition-all"
-          >
-            Learn More
-          </button>
-        </div>
-      </div>
 
-      {isModalOpen && (
-        <Modal
-          imgsrc={imgsrc}
-          title={title}
-          fullDescription={fullDescription ?? description}
-          onClose={closeModal}
-        />
-      )}
-    </>
+
+  return (
+      /* Outer wrapper with padding-top to make room for the icon that overflows */
+      <div className="relative w-full flex-1 flex flex-col pt-7">
+        {/* The Icon: Centered at the top, overlapping the card border */}
+        <div className="absolute top-0 left-1/12 -translate-x-1/12 z-20">
+          <span className="bg-theme p-2.5 flex items-center justify-center w-14 h-14 rounded-full shadow-[0_0_15px_rgba(0,0,0,0.4)] border-[3px] border-[#141212]">
+            <ServiceIcon />
+          </span>
+        </div>
+
+        {/* Card body */}
+        <div className="relative flex flex-col flex-1 bg-[#141212] text-white rounded-2xl border-2 border-theme overflow-hidden">
+          {/* Top Image Section */}
+          <div className="relative shrink-0 h-36 md:h-40">
+            <img
+              src={imgsrc}
+              alt={title}
+              className="w-full h-full object-cover opacity-80"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent" />
+          </div>
+
+          {/* Content Section */}
+          <div className="flex flex-col flex-1 p-5 md:p-6">
+            <div className="flex-1 space-y-2">
+              {/* Title — full, no truncation */}
+              <h3 className="text-theme text-lg md:text-2xl font-bold">
+                {title}
+              </h3>
+
+              {/* Description — clamped to 3 lines for uniform height */}
+              <p className="text-white text-sm md:text-[0.94rem] line-clamp-3">
+                {description}
+              </p>
+            </div>
+
+            {/* Learn More Button */}
+            <div className="mt-auto pt-4">
+              <button
+                onClick={openModal}
+              
+              className="bg-theme px-4 py-2 text-black font-semibold rounded-full cursor-pointer ">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {isModalOpen && (
+          <Modal
+            imgsrc={imgsrc}
+            title={title}
+            fullDescription={fullDescription ?? description}
+            onClose={closeModal}
+          />
+        )}
+      </div>
   );
 };
 

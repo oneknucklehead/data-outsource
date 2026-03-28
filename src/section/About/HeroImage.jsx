@@ -7,6 +7,7 @@ import { BadgeCheck } from "lucide-react";
 
 import vidThumb from "../../assets/About/vidThumb.png";
 import vid from "../../assets/About/vid.mp4";
+import { Link } from "react-router-dom";
 
 const bullets = [
   "Our Vendor partnerships have been selected from years of research trial and error so that today we can provide a product or service from our partner knowing that it is the best in the Industry.",
@@ -92,13 +93,15 @@ const HeroImage = () => {
             >
               Book A Free Demo <ArrowRight size={18} />
             </motion.button> */}
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <Button>Book A Free Demo</Button>
-              </motion.div>
+              <Link to={"/contact"}>
+                <motion.div
+                  initial={{ opacity: 0, x: -40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <Button>Book A Free Demo</Button>
+                </motion.div>
+              </Link>
               {/* Trusted Logos */}
             </motion.div>
 

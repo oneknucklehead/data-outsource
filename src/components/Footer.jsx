@@ -71,11 +71,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
           <div className="">
             <img src={logoYellow} alt="yellow logo " />
-            <p className="mb-5 md:mb-0 mt-5 text-sm md:text-base">
+            {/* <p className="mb-5 md:mb-0 mt-5 text-sm md:text-base">
               Our financial management platform is transforming the way people
               manage their money. Here’s what some of our users have to say
               about their experience.
-            </p>
+            </p> */}
           </div>
           {footerData.map((section, index) => (
             <div key={index}>
@@ -128,7 +128,7 @@ const Footer = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 md:mt-20">
           <div className="flex items-center flex-wrap text-xs md:text-sm">
-            © {new Date().getFullYear()} Neveco. All rights reserved.
+            © {new Date().getFullYear()} Data Outsource. All rights reserved.
           </div>
           <div className="hidden md:block"></div>
           <div className="hidden md:block"></div>

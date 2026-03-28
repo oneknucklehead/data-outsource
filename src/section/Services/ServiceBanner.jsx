@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../components/Button";
 import { motion } from "framer-motion";
 import serviceBanner from "../../assets/Services/serviceBanner.png";
+import { Link } from "react-router-dom";
 export const ServiceBanner = () => {
   return (
     <div className="text-white">
@@ -100,13 +101,15 @@ export const ServiceBanner = () => {
             >
               Book A Free Demo <ArrowRight size={18} />
             </motion.button> */}
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                <Button>Book A Free Demo</Button>
-              </motion.div>
+              <Link to={"/contact"}>
+                <motion.div
+                  initial={{ opacity: 0, x: -40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <Button>Book A Free Demo</Button>
+                </motion.div>
+              </Link>
               {/* Trusted Logos */}
             </motion.div>
 

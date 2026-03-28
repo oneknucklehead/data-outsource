@@ -42,7 +42,9 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
             transition={{ duration: 0.35, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="text-xs md:text-base pt-3 text-white">{answer}</div>
+            <div className="text-xs font-light md:text-base pt-3 text-gray-200">
+              {answer}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

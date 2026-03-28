@@ -6,6 +6,7 @@ import InfoSection from "../section/Services/InfoSection";
 import FAQAccordion from "../section/Services/FAQAccordion";
 import AllServiceTags from "../section/Services/AllServiceTags";
 import ImageCard from "../components/ImageCard";
+import CarouselNew from "../section/Services/CarouselNew";
 // import ImageCard from "../section/Services/ImageCard";
 const data = [
   {
@@ -74,7 +75,8 @@ const Services = () => {
   return (
     <div className="px-6 py-10">
       <ServiceBanner />
-      <Carousel items={data} />
+      {/* <Carousel items={data} /> */}
+      <CarouselNew items={data} />
       <InfoSection />
       <AllServiceTags />
       {/* <ImageCard /> */}

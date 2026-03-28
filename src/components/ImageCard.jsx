@@ -1,6 +1,7 @@
 import React from "react";
 import serviceBanner2 from "../assets/Services/serviceBanner2.png";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 
 const ImageCard = () => {
   return (
@@ -28,9 +29,11 @@ const ImageCard = () => {
           </p>
 
           <div className="mt-2">
-            <Button>
-              <div className="">Request a free 30 min consultation</div>
-            </Button>
+            <Link to={"/contact"}>
+              <Button>
+                <div className="">Request a free 30 min consultation</div>
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

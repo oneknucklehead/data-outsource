@@ -89,9 +89,9 @@ const Navbar = () => {
           })}
 
           {/* CTA Button */}
-          <Button>
-            <a href="tel:+918420317786">Call us</a>
-          </Button>
+          <a href="tel:+918420317786">
+            <Button>Call us</Button>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -141,10 +141,11 @@ const Navbar = () => {
                   </Link>
                 );
               })}
-
-              <button className="w-full bg-theme text-black font-semibold px-5 py-2 rounded-full">
-                Call Us
-              </button>
+              <a href="tel:+918420317786">
+                <button className="w-full bg-theme text-black font-semibold px-5 py-2 rounded-full">
+                  Call Us
+                </button>
+              </a>
             </div>
           </motion.div>
         )}

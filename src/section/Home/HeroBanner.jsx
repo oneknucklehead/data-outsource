@@ -6,6 +6,7 @@ import Lottie from "lottie-react";
 import serverLottie from "../../assets/homeServerLottie.json";
 import Button from "../../components/Button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const logos = [{ img: src1 }, { img: src1 }, { img: src1 }, { img: src1 }];
 
@@ -88,15 +89,18 @@ const HeroBanner = () => {
             >
               Book A Free Demo <ArrowRight size={18} />
             </motion.button> */}
-              <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                <Button>Book A Free Demo</Button>
-              </motion.div>
+              <Link to={"/contact"}>
+                <motion.div
+                  initial={{ opacity: 0, x: -40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.7 }}
+                >
+                  <Button>Book A Free Demo</Button>
+                </motion.div>
+              </Link>
+
               {/* Trusted Logos */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, x: -40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
@@ -115,7 +119,7 @@ const HeroBanner = () => {
                     />
                   ))}
                 </div>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
 
             {/* Right Side Graphic */}
